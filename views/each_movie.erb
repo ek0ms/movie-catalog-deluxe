@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title><%= @movie_info[0]["title"]%></title>
+  </head>
+  <body>
+    <h1><%= @movie_info[0]["title"]%></h1>
+    <dl>
+      <dd>Year Released: <%=@movie_info[0]["year"]%></dd>
+      <dd>Rating: <%=@movie_info[0]["rating"]%></dd>
+      <dd>Studio: <%=@movie_info[0]["studio"]%></dd>
+      <dd>Genre: <%=@movie_info[0]["genre"]%> </dd>
+    </dl>
+    <ul>
+        <% @movie_info.each do |movie| %>
+          <li> <%=movie["character"]%> <a href="/actors/<%= movie["actor_id"] %>"><%= movie["name"] %></a> </li>
+        <% end %>
+    </ul>
+  </body>
+</html>
